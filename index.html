@@ -23,6 +23,9 @@
         document.getElementById("miParrafo").innerHTML = codigo;
         
         try {
+
+          document.getElementById("miParrafo").innerHTML = ${API_URL}?codigo=${encodeURIComponent(codigo);
+            
           const res = await fetch(`${API_URL}?codigo=${encodeURIComponent(codigo)}`);
           const data = await res.json();
   
