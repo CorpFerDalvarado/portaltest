@@ -10,9 +10,7 @@
     
     <script>
       const AS_URL_BASE = "https://script.google.com/home/projects/1gqQp9lxxlmezflShztwJcWsndEVanrfqoLgOHf0U9QqT6rXWxamPI7fq/exec";
-      buscarPDF();
       
-      async function buscarPDF() {
         var url = document.location.href;
       const codigo = url.substr(url.lastIndexOf("k=")+2);
       const visor = document.getElementById("visor");
@@ -30,7 +28,7 @@
       } catch (err) {
         visor.innerHTML = `<p style="color:red;">Error de conexión con el servidor.</p>`;
       }
-    }
+    
   
     </script>
     <div class="vertical">  
