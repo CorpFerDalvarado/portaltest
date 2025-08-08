@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
   <a>Espere...</a>
-  <p id="miParrafo"></p>
+  <p id="miParrafo"> No veo el mensaje</p>
   <body>
     
     <script>
@@ -17,9 +17,8 @@
         const codigo = url.substr(url.lastIndexOf("k=")+2);
         const visor = document.getElementById("visor");
         visor.innerHTML = "<p>Buscando...</p>";
-
-        let miVariable = codigo;
-        document.getElementById("miParrafo").innerHTML = miVariable;
+        
+        document.getElementById("miParrafo").innerHTML = codigo;
         
         try {
           const res = await fetch(`${API_URL}?codigo=${encodeURIComponent(codigo)}`);
