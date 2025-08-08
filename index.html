@@ -7,6 +7,7 @@
 </head>
   <a>Espere...</a>
   <p id="miParrafo"> No veo el mensaje</p>
+  <div id="visor"></div>
   <body>
     
     <script>
@@ -16,6 +17,7 @@
         var url = document.location.href;
         const codigo = url.substr(url.lastIndexOf("k=")+2);
         const visor = document.getElementById("visor");
+        
         visor.innerHTML = "<p>Buscando...</p>";
         
         document.getElementById("miParrafo").innerHTML = codigo;
@@ -32,15 +34,12 @@
         } catch (err) {
           visor.innerHTML = `<p style="color:red;">Error de conexión con el servidor.</p>`;
         }
-      }
-
-      
+      }    
     
       mostrarPDF();
     </script>
     <div class="vertical">  
-        <div id="visor">         
-        </div>
+        
         <div class="box">
           <img src="Data.png" class="responsive" ></img>          
         </div>
