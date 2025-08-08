@@ -24,11 +24,11 @@
         
         try {
 
-          document.getElementById("miParrafo").innerHTML = ${API_URL}?codigo=${encodeURIComponent(codigo)};
+          document.getElementById("miParrafo").innerHTML = '${API_URL}?codigo=${encodeURIComponent(codigo)}';
             
           const res = await fetch(`${API_URL}?codigo=${encodeURIComponent(codigo)}`);
           const data = await res.json();
-  
+          
           if (data.url) {
             visor.innerHTML = `<iframe src="${data.url}" width="100%" height="600"></iframe>`;
           } else {
