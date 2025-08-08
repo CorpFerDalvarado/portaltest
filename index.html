@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
   <a>Espere...</a>
+  <p id="miParrafo"></p>
   <body>
     
     <script>
@@ -16,7 +17,10 @@
         const codigo = url.substr(url.lastIndexOf("k=")+2);
         const visor = document.getElementById("visor");
         visor.innerHTML = "<p>Buscando...</p>";
-  
+
+        let miVariable = codigo;
+        document.getElementById("miParrafo").innerHTML = miVariable;
+        
         try {
           const res = await fetch(`${API_URL}?codigo=${encodeURIComponent(codigo)}`);
           const data = await res.json();
@@ -30,6 +34,8 @@
           visor.innerHTML = `<p style="color:red;">Error de conexión con el servidor.</p>`;
         }
       }
+
+      
     
       mostrarPDF();
     </script>
