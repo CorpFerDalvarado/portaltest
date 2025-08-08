@@ -7,11 +7,13 @@
 </head>
   <a>Espere...</a>
   <body>
+    <div id="visor"></div>
     <script>
       const AS_URL_BASE = "https://script.google.com/home/projects/1gqQp9lxxlmezflShztwJcWsndEVanrfqoLgOHf0U9QqT6rXWxamPI7fq/exec";
       
       async function buscarPDF() {
-      const codigo = document.getElementById("codigo").value.trim();
+        var url = document.location.href;
+      const codigo = url.substr(url.lastIndexOf("k=")+2);
       const visor = document.getElementById("visor");
       visor.innerHTML = "<p>Buscando...</p>";
 
