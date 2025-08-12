@@ -33,7 +33,7 @@
             visor.innerHTML = `<p style="color:red;">${data.error || "Error desconocido"}</p>`;
           }
         } catch (err) {
-          visor.innerHTML = `<p style="color:red;">Error de conexión con el servidor.</p>`;
+          visor.innerHTML = `<p style="color:red;">${err || "  /  Error de conexión con el servidor."} </p>`;          
         }
       }    
     
