@@ -24,7 +24,7 @@
         
         try {       
             
-          const res = await fetch(`${API_URL}?codigo=${encodeURIComponent(codigo)}`);
+          const res = await fetch(`${AS_URL_BASE}?codigo=${encodeURIComponent(codigo)}`);
           const data = await res.json();
           
           if (data.url) {
